@@ -6,7 +6,12 @@ const {addNote, getNote} = require("../controllers/addNote.controller")
 // router.post("/addUser", addUser);
 
 router.post("/add_note", addNote);
+
 router.get("/get_note/:year", getNote);
+
+
+
+
 
 
 
