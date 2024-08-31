@@ -10,11 +10,13 @@ dotenv.config();
 exports.login = async (req, res) => {
     try {
         const { email, password } = req.body;
+        console.log(email, password);
         if (!email || !password) {
             return res.status(400).json({ error: "Email and password are required." });
         }
 
         const user = await User.findOne({ email });
+        console.log(user)
         if (!user) {
             return res.status(401).json({ message: "This email does not exist." });
         }
@@ -24,21 +26,21 @@ exports.login = async (req, res) => {
             const accessToken = generateAccessToken(user);
             const refreshToken = generateRefreshToken(user);
 
-            
+
             user.refreshToken = refreshToken;
             await user.save();
 
             return res.status(200).json({ accessToken, refreshToken });
-         
 
 
-            
+
+
         } else {
             return res.status(401).json({ message: "Invalid credentials." });
         }
     } catch (error) {
         console.error(error);
-        return res.status(500).json({ error: "Internal server error." });
+        return res.status(500).json({ message: "Internal server error." });
     }
 };
 

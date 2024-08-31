@@ -23,11 +23,11 @@ const SubjectSchema = new Schema({
         required: true,
     },
     year: {
-        type: Number,
+        type: String,
         required: true,
     },
     semester: {
-        type: Number,
+        type: String,
         required: true,
     },
     pdfLine: {

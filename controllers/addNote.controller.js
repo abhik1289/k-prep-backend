@@ -5,6 +5,7 @@ exports.addNote = async (req, res) => {
     console.log("Add Note request received");
 
     try {
+        console.log(req.body)
         const { title, subjectFullName, sortName, credit, subCode, year, semester, pdfLine } = req.body;
 
        
@@ -31,7 +32,7 @@ exports.getNote = async (req, res) => {
     try {
         const { year } = req.params;
 
-      
+      console.log(year)
         const notes = await Note.find({ year });
 
         if (notes && notes.length > 0) {
