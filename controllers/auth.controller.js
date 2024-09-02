@@ -8,6 +8,9 @@ dotenv.config();
 
 // Login function
 exports.login = async (req, res) => {
+    // console.log("first");
+    
+    
     try {
         const { email, password } = req.body;
         console.log(email, password);

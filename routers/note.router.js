@@ -10,6 +10,12 @@ router.post("/add_note", addNote);
 router.get("/get_note/:year", getNote);
 
 
+router.get("/",(req,res)=>{
+    console.log("Hello World")
+})
+
+
+
 
 
 

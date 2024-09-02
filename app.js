@@ -11,7 +11,7 @@ const noteRoutes = require("./routers/note.router");
 
 
 const corsOptions = {
-    origin: 'http://localhost:3000',//(https://your-client-app.com)
+    origin: 'http://localhost:3000',
     optionsSuccessStatus: 200,
 };
 
@@ -22,9 +22,12 @@ app.use(express.urlencoded({ extended: false }))
 
 app.get("/test", (req, res) => {
     console.log("Api request")
+    
+
     return res.status(200).json({
         message: "Hello, world!"
     })
+    
 })
 
 app.use("/api/v1/auth", authRouter);
