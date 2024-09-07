@@ -28,15 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
 
 
-app.get("/", (req, res) => {
-    res.send("Hello")
-    
-
-    return res.status(200).json({
-        message: "Hello, world!"
-    })
-    
-})
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/notes", noteRoutes);
