@@ -17,6 +17,7 @@ const authRouter = require("./routers/auth.router");
 const noteRoutes = require("./routers/note.router");
 
 
+
 const corsOptions = {
     origin: 'http://localhost:3000',
     optionsSuccessStatus: 200,
@@ -27,8 +28,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
 
 
-app.get("/test", (req, res) => {
-    console.log("Api request")
+app.get("/", (req, res) => {
+    res.send("Hello")
     
 
     return res.status(200).json({
