@@ -12,9 +12,9 @@ var cors = require('cors')
 
 
 
-require("./db/connection");
-const authRouter = require("./routers/auth.router");
-const noteRoutes = require("./routers/note.router");
+require("../db/connection");
+const authRouter = require("../routers/auth.router");
+const noteRoutes = require("../routers/note.router");
 
 
 
