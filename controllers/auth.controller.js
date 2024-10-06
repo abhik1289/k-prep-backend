@@ -49,6 +49,7 @@ exports.login = async (req, res) => {
 
 // Add User function
 exports.addUser = async (req, res) => {
+    console.log("This is called by Abhik")
     try {
         const { name, email, password } = req.body;
         if (!name || !email || !password) {
